@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spnFacultyID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtDeptName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88dp" />
+
+    <EditText
+        android:id="@+id/edtDeptID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Department ID"
+        android:layout_marginTop="194dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/edtDeptName"
+        android:layout_alignStart="@+id/edtDeptName" />
+
+    <EditText
+        android:id="@+id/edtDeptName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Department Name"
+        android:layout_below="@+id/edtDeptID"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnAddDept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtDeptName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:text="ADD" />
+
+</RelativeLayout>

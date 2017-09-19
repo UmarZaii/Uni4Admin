@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:text="We have sent you verification email for your account to the email below:"
+        android:gravity="center"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="105dp"
+        android:id="@+id/txtActivationContent1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:hint="E-mail"
+        android:gravity="center"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAdminEmail"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/txtActivationContent1"
+        android:layout_alignLeft="@+id/txtActivationContent1"
+        android:layout_alignStart="@+id/txtActivationContent1" />
+
+    <TextView
+        android:text="Please verify your email and click continue to proceed"
+        android:gravity="center"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtActivationContent2"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/txtAdminEmail"
+        android:layout_alignLeft="@+id/txtAdminEmail"
+        android:layout_alignStart="@+id/txtAdminEmail" />
+
+    <Button
+        android:id="@+id/btnResendEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESEND EMAIL"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/txtActivationContent2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTINUE"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnResendEmail"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnGoToAddClassLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD CLASSLOCATION"
+        android:layout_above="@+id/btnGoToAddFaculty"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnGoToAddFaculty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD FACULTY"
+        android:layout_above="@+id/btnGoToAddDept"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnGoToAddDept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD DEPARTMENT"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btnGoToAddCourse" />
+
+    <Button
+        android:id="@+id/btnGoToAddCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD COURSE"
+        android:layout_alignBottom="@+id/btnGoToAddDeptAdmin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp" />
+
+    <Button
+        android:id="@+id/btnGoToAddDeptAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD DEPTADMIN"
+        android:layout_marginBottom="67dp"
+        android:layout_above="@+id/btnLogOut"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOG OUT"
+        android:layout_marginBottom="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
