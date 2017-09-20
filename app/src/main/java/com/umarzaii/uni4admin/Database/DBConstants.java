@@ -34,6 +34,7 @@ public class DBConstants {
     public static final String userName          = "userName";
     public static final String studentID         = "studentID";
     public static final String lecturerID        = "lecturerID";
+    public static final String lecturerName      = "lecturerName";
     public static final String userRole          = "userRole";
 
     //FACULTY CONSTANTS

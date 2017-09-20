@@ -20,6 +20,8 @@ public class LecturerMapper {
     @Exclude
     public Map<String, Object> detailsToMap() {
         HashMap<String, Object> result = new HashMap<>();
+        result.put(DBConstants.lecturerID, model.getLecturerID());
+        result.put(DBConstants.lecturerName, model.getLecturerName());
         result.put(DBConstants.facultyID, model.getFacultyID());
         result.put(DBConstants.deptID, model.getDeptID());
         result.put(DBConstants.deptAdmin, model.getDeptAdmin());

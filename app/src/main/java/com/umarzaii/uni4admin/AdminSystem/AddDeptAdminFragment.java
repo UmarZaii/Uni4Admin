@@ -227,6 +227,7 @@ public class AddDeptAdminFragment extends Fragment {
     private void addDeptAdmin() {
 
         LecturerModel lecturerModel = new LecturerModel();
+        lecturerModel.setLecturerID(strLecturerID);
         lecturerModel.setLecturerName(strLecturerName);
         lecturerModel.setFacultyID(strFacultyID);
         lecturerModel.setDeptID(strDepartmentIDSelection);
