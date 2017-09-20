@@ -8,7 +8,7 @@ public class TblTimeFrame {
     private DatabaseReference database;
     private DatabaseReference tblTimeFrame;
 
-    public TblTimeFrame(String uniID) {
+    public TblTimeFrame() {
         database = FirebaseDatabase.getInstance().getReference();
         tblTimeFrame = database.child(DBConstants.tblTimeFrame);
     }
@@ -52,10 +52,10 @@ public class TblTimeFrame {
     public DatabaseReference getTblUserClass(String userClassID) {
         return getTblUserClass().child(userClassID);
     }
-    private DatabaseReference getUCDay(String userClassID, String dayID) {
+    public DatabaseReference getUCDay(String userClassID, String dayID) {
         return getTblUserClass(userClassID).child(dayID);
     }
-    private DatabaseReference getUCTime(String userClassID, String dayID, String timeID) {
+    public DatabaseReference getUCTime(String userClassID, String dayID, String timeID) {
         return getUCDay(userClassID,dayID).child(timeID);
     }
     public DatabaseReference getUCSubjectID(String userClassID, String dayID, String timeID) {
@@ -69,23 +69,23 @@ public class TblTimeFrame {
     }
 
     //LECTURER
-    public DatabaseReference getTblLecturer(String userID) {
-        return getTblLecturer().child(userID);
+    public DatabaseReference getTblLecturer(String lectID) {
+        return getTblLecturer().child(lectID);
     }
-    private DatabaseReference getLCDay(String userClassID, String dayID) {
-        return getTblUserClass(userClassID).child(dayID);
+    public DatabaseReference getLCDay(String lectID, String dayID) {
+        return getTblLecturer(lectID).child(dayID);
     }
-    private DatabaseReference getLCTime(String userClassID, String dayID, String timeID) {
-        return getLCDay(userClassID,dayID).child(timeID);
+    public DatabaseReference getLCTime(String lectID, String dayID, String timeID) {
+        return getLCDay(lectID,dayID).child(timeID);
     }
-    public DatabaseReference getLCSubjectID(String userClassID, String dayID, String timeID) {
-        return getLCTime(userClassID,dayID,timeID).child(DBConstants.subjectID);
+    public DatabaseReference getLCSubjectID(String lectID, String dayID, String timeID) {
+        return getLCTime(lectID,dayID,timeID).child(DBConstants.subjectID);
     }
-    public DatabaseReference getLCClassLocationID(String userClassID, String dayID, String timeID) {
-        return getLCTime(userClassID,dayID,timeID).child(DBConstants.classLocationID);
+    public DatabaseReference getLCClassLocationID(String lectID, String dayID, String timeID) {
+        return getLCTime(lectID,dayID,timeID).child(DBConstants.classLocationID);
     }
-    public DatabaseReference getLCUserClassID(String userClassID, String dayID, String timeID) {
-        return getLCTime(userClassID,dayID,timeID).child(DBConstants.userClassID);
+    public DatabaseReference getLCUserClassID(String lectID, String dayID, String timeID) {
+        return getLCTime(lectID,dayID,timeID).child(DBConstants.userClassID);
     }
 
 }

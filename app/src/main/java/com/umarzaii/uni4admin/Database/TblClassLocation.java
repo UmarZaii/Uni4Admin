@@ -22,6 +22,9 @@ public class TblClassLocation {
     }
 
     //DETAILS
+    public DatabaseReference getClassLocationID(String classLocationID) {
+        return getTable(classLocationID).child(DBConstants.classLocationID);
+    }
     public DatabaseReference getClassLocationName(String classLocationID) {
         return getTable(classLocationID).child(DBConstants.classLocationName);
     }

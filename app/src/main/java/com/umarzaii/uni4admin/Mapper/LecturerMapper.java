@@ -24,7 +24,6 @@ public class LecturerMapper {
         result.put(DBConstants.deptID, model.getDeptID());
         result.put(DBConstants.deptAdmin, model.getDeptAdmin());
         result.put(DBConstants.deptHead, model.getDeptHead());
-        result.put(DBConstants.lecturerName, model.getLecturerName());
         return result;
     }
 

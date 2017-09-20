@@ -8,6 +8,7 @@ public class DBConstants {
     public static final String tblSubject        = "tblSubject";
     public static final String tblAdmin          = "tblAdmin";
     public static final String tblUser           = "tblUser";
+    public static final String tblUniversity     = "tblUniversity";
     public static final String tblFaculty        = "tblFaculty";
     public static final String tblDepartment     = "tblDepartment";
     public static final String tblCourse         = "tblCourse";
@@ -28,11 +29,11 @@ public class DBConstants {
     public static final String adminName         = "adminName";
 
     //USER CONSTANTS
+    public static final String userID            = "userID";
     public static final String userEmail         = "userEmail";
+    public static final String userName          = "userName";
     public static final String studentID         = "studentID";
-    public static final String studentName       = "studentName";
     public static final String lecturerID        = "lecturerID";
-    public static final String lecturerName      = "lecturerName";
     public static final String userRole          = "userRole";
 
     //FACULTY CONSTANTS
@@ -48,10 +49,13 @@ public class DBConstants {
     public static final String subjectName       = "subjectName";
 
     //USER CLASS CONSTANTS
+    public static final String userClass         = "userClass";
     public static final String userClassID       = "userClassID";
+    public static final String userClassName     = "userClassName";
     public static final String semesterID        = "semesterID";
 
     //CLASS LOCATION CONSTANTS
+    public static final String classLocation     = "classLocation";
     public static final String classLocationID   = "classLocationID";
     public static final String classLocationName = "classLocationName";
 

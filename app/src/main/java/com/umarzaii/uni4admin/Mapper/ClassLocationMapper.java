@@ -21,6 +21,7 @@ public class ClassLocationMapper {
     public Map<String, Object> detailsToMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put(DBConstants.facultyID, model.getFacultyID());
+        result.put(DBConstants.classLocationID, model.getClassLocationID());
         result.put(DBConstants.classLocationName, model.getClassLocationName());
         return result;
     }

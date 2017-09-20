@@ -25,8 +25,10 @@ import com.umarzaii.uni4admin.Controller.FragmentController;
 import com.umarzaii.uni4admin.Database.DBConstants;
 import com.umarzaii.uni4admin.Database.TblDepartment;
 import com.umarzaii.uni4admin.Database.TblLecturer;
+import com.umarzaii.uni4admin.Database.TblTimeFrame;
 import com.umarzaii.uni4admin.Database.TblUser;
 import com.umarzaii.uni4admin.Mapper.LecturerMapper;
+import com.umarzaii.uni4admin.Mapper.TimeTableMapper;
 import com.umarzaii.uni4admin.Mapper.UserMapper;
 import com.umarzaii.uni4admin.Model.LecturerModel;
 import com.umarzaii.uni4admin.Model.UserModel;
@@ -43,6 +45,7 @@ public class AddDeptAdminFragment extends Fragment {
     private TblUser tblUser;
     private TblLecturer tblLecturer;
     private TblDepartment tblDepartment;
+    private TblTimeFrame tblTimeFrame;
 
     private Spinner spnDeptID;
     private EditText edtLecturerID, edtLecturerName;
@@ -75,6 +78,7 @@ public class AddDeptAdminFragment extends Fragment {
         tblUser = new TblUser();
         tblLecturer = new TblLecturer();
         tblDepartment = new TblDepartment();
+        tblTimeFrame = new TblTimeFrame();
 
         spnDeptID = (Spinner)v.findViewById(R.id.spnDeptID);
         edtLecturerID = (EditText)v.findViewById(R.id.edtLecturerID);
@@ -127,7 +131,6 @@ public class AddDeptAdminFragment extends Fragment {
     }
 
     private void checkUserDetails(final String userID) {
-
         tblUser.getTable().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -144,7 +147,6 @@ public class AddDeptAdminFragment extends Fragment {
 
             }
         });
-
     }
 
     private void getDepartment() {
@@ -244,6 +246,11 @@ public class AddDeptAdminFragment extends Fragment {
         final Map<String, Object> dataUser = new HashMap<String, Object>();
         dataUser.put(strUserID, userMapper.credentialsToMap());
         tblUser.getTable().updateChildren(dataUser);
+
+        TimeTableMapper ttMapper = new TimeTableMapper(getActivity());
+        final Map<String, Object> dataMapTt = new HashMap<String, Object>();
+        dataMapTt.put(strLecturerID, ttMapper.timeTableInit(DBConstants.tblLecturer));
+        tblTimeFrame.getTblLecturer().updateChildren(dataMapTt);
 
         controller.popBackStack("AddDeptAdmin");
 

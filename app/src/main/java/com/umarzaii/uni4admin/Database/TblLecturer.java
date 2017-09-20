@@ -34,9 +34,6 @@ public class TblLecturer {
     public DatabaseReference getDepartmentAdmin(String lecturerID) {
         return getTable(lecturerID).child(DBConstants.deptAdmin);
     }
-    public DatabaseReference getLecturerName(String lecturerID) {
-        return getTable(lecturerID).child(DBConstants.lecturerName);
-    }
 
 //    //LIST SUBJECT
 //    public DatabaseReference getTableListSubj(String lecturerID) {

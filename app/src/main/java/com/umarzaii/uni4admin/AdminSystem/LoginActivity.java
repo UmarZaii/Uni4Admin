@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin, btnGoToSignUp;
     private ProgressDialog progressDialog;
 
-    private String strAdminEmail, strAdminPass, strAdminID;
+    private String strAdminEmail, strAdminPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,16 +107,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void adminCheck() {
-        strAdminID = controller.getUserID();
+        System.out.println(controller.getUserID());
 
         tblAdmin.getTable().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChild(strAdminID) && controller.getCurrentUser().isEmailVerified()) {
+                if (dataSnapshot.hasChild(controller.getUserID()) && controller.getCurrentUser().isEmailVerified()) {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                     progressDialog.dismiss();
-                } else if (!dataSnapshot.hasChild(strAdminID)) {
+                } else if (!dataSnapshot.hasChild(controller.getUserID())) {
                     Toast.makeText(LoginActivity.this, "Please enter valid admin email", Toast.LENGTH_SHORT).show();
                     controller.getFirebaseAuth().signOut();
                     progressDialog.dismiss();

@@ -22,8 +22,8 @@ public class TblAdmin {
     }
 
     //DETAILS
-    public DatabaseReference getAdminEmail(String userID) {
-        return getTable(userID).child(DBConstants.adminEmail);
+    public DatabaseReference getAdminEmail(String adminID) {
+        return getTable(adminID).child(DBConstants.adminEmail);
     }
 
 }

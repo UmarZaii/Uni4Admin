@@ -1,9 +1,11 @@
 package com.umarzaii.uni4admin.Mapper;
 
+import android.app.Activity;
+
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
-import com.umarzaii.uni4admin.Database.DBConstants;
 import com.umarzaii.uni4admin.Controller.DropdownController;
+import com.umarzaii.uni4admin.Database.DBConstants;
 import com.umarzaii.uni4admin.Model.TimeTableModel;
 
 import java.util.ArrayList;
@@ -16,9 +18,13 @@ public class TimeTableMapper {
     TimeTableModel model;
     DropdownController controller;
 
-    public TimeTableMapper(TimeTableModel model, DropdownController controller) {
+    public TimeTableMapper(Activity activity) {
+        controller = new DropdownController(activity);
+    }
+
+    public TimeTableMapper(Activity activity, TimeTableModel model) {
         this.model = model;
-        this.controller = controller;
+        controller = new DropdownController(activity);
     }
 
     @Exclude
@@ -76,7 +82,7 @@ public class TimeTableMapper {
     }
 
     @Exclude
-    private Map<String, Object> timeFrameInit(String initType) {
+    private Map<String, Object> timeFrameInit(String initType, String dayID) {
         ArrayList<String> time = controller.timeHour();
         HashMap<String, Object> timeFrame = new HashMap<>();
         for (String timeID: time) {
@@ -89,6 +95,7 @@ public class TimeTableMapper {
                 details = lecturerInit();
             }
             timeFrame.put(timeID, details);
+            timeFrame.put(DBConstants.dayID, dayID);
         }
         return timeFrame;
     }
@@ -98,7 +105,7 @@ public class TimeTableMapper {
         ArrayList<String> day = controller.timeDay();
         HashMap<String, Object> result = new HashMap<>();
         for (String dayID: day) {
-            Map<String, Object> details = timeFrameInit(initType);
+            Map<String, Object> details = timeFrameInit(initType,dayID);
             result.put(dayID, details);
         }
         return result;

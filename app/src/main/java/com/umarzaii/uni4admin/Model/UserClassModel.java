@@ -2,12 +2,30 @@ package com.umarzaii.uni4admin.Model;
 
 public class UserClassModel {
 
+    private String userClassID;
+    private String userClassName;
     private String facultyID;
     private String deptID;
     private String courseID;
     private String semesterID;
 
     public UserClassModel() {
+    }
+
+    public String getUserClassID() {
+        return userClassID;
+    }
+
+    public void setUserClassID(String userClassID) {
+        this.userClassID = userClassID;
+    }
+
+    public String getUserClassName() {
+        return userClassName;
+    }
+
+    public void setUserClassName(String userClassName) {
+        this.userClassName = userClassName;
     }
 
     public String getFacultyID() {

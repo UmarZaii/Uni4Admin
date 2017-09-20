@@ -1,10 +1,37 @@
 package com.umarzaii.uni4admin.Controller;
 
+import android.app.Activity;
+import android.widget.ArrayAdapter;
+
+import com.google.firebase.database.DataSnapshot;
+
 import java.util.ArrayList;
 
 public class DropdownController {
 
-    public ArrayList<String> semester() {
+    private Activity activity;
+
+    public DropdownController(Activity activity) {
+        this.activity = activity;
+    }
+
+    public ArrayAdapter getAdapter(DataSnapshot dataSnapshot) {
+        ArrayList<String> list = new ArrayList<String>();
+        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+            list.add(postSnapshot.getKey());
+        }
+        ArrayAdapter adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        return adapter;
+    }
+
+    public ArrayAdapter getAdapter(ArrayList list) {
+        ArrayAdapter adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        return adapter;
+    }
+
+    public ArrayList<String> semester() {   //HARDCODE
         ArrayList<String> day = new ArrayList<String>();
         day.add("Semester 1");
         day.add("Semester 2");
@@ -15,7 +42,7 @@ public class DropdownController {
         return day;
     }
 
-    public ArrayList<String> timeDay() {
+    public ArrayList<String> timeDay() {   //HARDCODE
         ArrayList<String> day = new ArrayList<String>();
         day.add("1Sunday");
         day.add("2Monday");
@@ -25,7 +52,7 @@ public class DropdownController {
         return day;
     }
 
-    public ArrayList<String> timeHour() {
+    public ArrayList<String> timeHour() {   //HARDCODE
         ArrayList<String> hour = new ArrayList<String>();
         hour.add("0800-0900");
         hour.add("0900-1000");
