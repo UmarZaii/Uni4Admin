@@ -21,6 +21,7 @@ public class MainFragment extends Fragment {
     private Button btnGoToAddFaculty;
     private Button btnGoToAddDept;
     private Button btnGoToAddCourse;
+    private Button btnGoToAddSubject;
     private Button btnGoToAddDeptAdmin;
     private Button btnGoToAddClasLocation;
     private Button btnLogOut;
@@ -45,6 +46,7 @@ public class MainFragment extends Fragment {
         btnGoToAddFaculty = (Button)v.findViewById(R.id.btnGoToAddFaculty);
         btnGoToAddDept = (Button)v.findViewById(R.id.btnGoToAddDept);
         btnGoToAddCourse = (Button)v.findViewById(R.id.btnGoToAddCourse);
+        btnGoToAddSubject = (Button)v.findViewById(R.id.btnGoToAddSubject);
         btnGoToAddDeptAdmin = (Button)v.findViewById(R.id.btnGoToAddDeptAdmin);
         btnLogOut = (Button)v.findViewById(R.id.btnLogOut);
 
@@ -66,6 +68,13 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 fragmentController.stackFragment(new AddCourseFragment(), R.id.content_main, "AddCourse");
+            }
+        });
+
+        btnGoToAddSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentController.stackFragment(new AddSubjectFragment(), R.id.content_main, "AddSubject");
             }
         });
 

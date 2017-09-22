@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spnDeptID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="49dp"
+        android:layout_above="@+id/edtSubjectID"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/edtSubjectID"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Subject ID"
+        android:layout_alignBottom="@+id/edtSubjectName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp" />
+
+    <EditText
+        android:id="@+id/edtSubjectName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Subject Name"
+        android:layout_above="@+id/btnAddSubject"
+        android:layout_alignLeft="@+id/edtSubjectID"
+        android:layout_alignStart="@+id/edtSubjectID"
+        android:layout_marginBottom="33dp" />
+
+    <Button
+        android:id="@+id/btnAddSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:layout_marginBottom="138dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

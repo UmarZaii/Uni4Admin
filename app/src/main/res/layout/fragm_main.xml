@@ -38,11 +38,19 @@
         android:layout_marginBottom="45dp" />
 
     <Button
+        android:id="@+id/btnGoToAddSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD SUBJECT"
+        android:layout_above="@+id/btnGoToAddClassLocation"
+        android:layout_centerHorizontal="true" />
+
+    <Button
         android:id="@+id/btnGoToAddDeptAdmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD DEPTADMIN"
-        android:layout_marginBottom="67dp"
+        android:layout_marginBottom="55dp"
         android:layout_above="@+id/btnLogOut"
         android:layout_centerHorizontal="true" />
 
